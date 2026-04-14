@@ -1,2 +1,2 @@
-# data_sharing_health_in_central_denmark
+# Data sharing - Health in Central Denmark
 Analysis code documentation: Public attitudes toward sharing health data for artificial intelligence in the Health in Central Denmark Cohort

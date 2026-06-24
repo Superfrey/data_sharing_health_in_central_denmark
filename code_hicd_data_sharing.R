@@ -416,7 +416,7 @@ audio_weighted_estimates <- estimates_OR(model_audio_weighted) %>%
 model_genetic_unweighted <- multinom(
   relevel(aiq6_4, ref = "Ved ikke") ~ group_data_sharing_q6,
   data = responses_weights,
-  weights = NULL
+  weights = weights_background_rescaled
 )
 
 genetic_unweighted_estimates <- estimates_OR(model_genetic_unweighted) %>%

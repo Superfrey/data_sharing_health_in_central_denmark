@@ -410,16 +410,15 @@ model_audio_weighted <- multinom(
 audio_weighted_estimates <- estimates_OR(model_audio_weighted) %>%
   mutate(type = "audio")
 
+### ---- Genetic data ------------
 
-### ---- Genetic data -----------
-
-model_genetic_unweighted <- multinom(
+model_genetic_weighted <- multinom(
   relevel(aiq6_4, ref = "Ved ikke") ~ group_data_sharing_q6,
   data = responses_weights,
   weights = weights_background_rescaled
 )
 
-genetic_unweighted_estimates <- estimates_OR(model_genetic_unweighted) %>%
+genetic_weighted_estimates <- estimates_OR(model_genetic_weighted) %>%
   mutate(type = "genetic")
 
 
@@ -462,14 +461,15 @@ model_audio_unweighted <- multinom(
 audio_unweighted_estimates <- estimates_OR(model_audio_unweighted) %>%
   mutate(type = "audio")
 
+### ---- Genetic data -----------
 
-### ---- Genetic data ------------
-
-model_genetic_weighted <- multinom(
+model_genetic_unweighted <- multinom(
   relevel(aiq6_4, ref = "Ved ikke") ~ group_data_sharing_q6,
   data = responses_weights,
   weights = NULL
 )
 
-genetic_weighted_estimates <- estimates_OR(model_genetic_weighted) %>%
+genetic_unweighted_estimates <- estimates_OR(model_genetic_unweighted) %>%
   mutate(type = "genetic")
+
+
